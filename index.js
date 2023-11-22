@@ -24,14 +24,15 @@ class Ball {
         this.size = size;
     }
 
-    draw(ctx) {
+    //En el Math.PI no hay que poner el parentesis
+    draw() {
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI());
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
         ctx.fill();
     }
 
-    update(width,height) {
+    update() {
         if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
             this.velX = -this.velX;
         }
